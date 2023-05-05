@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>kz.shaykemelov.example</groupId>
+        <artifactId>api</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>api-v1</artifactId>
+    <packaging>pom</packaging>
+
+    <name>api-v1</name>
+    <modules>
+        <module>api-v1-public</module>
+        <module>api-v1-private</module>
+        <module>api-v1-internal</module>
+    </modules>
+</project>

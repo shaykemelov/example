@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: example
+  flyway:
+    enabled: 'true'
+    baseline-on-migrate: 'true'
+    out-of-order: false
+  jpa:
+    properties:
+      jakarta:
+        persistence:
+          sharedCache:
+            mode: NONE
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    show-sql: true
+  datasource:
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 100
+      auto-commit: false
+    url: jdbc:postgresql://localhost:5432/example
+    username: example
+    password: example
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+#    username: example
+#    password: example
+#    listener:
+#      simple:
+#        default-requeue-rejected: false
+
+server:
+  shutdown: graceful
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    io.r2dbc.postgresql.QUERY: DEBUG # for queries
+    io.r2dbc.postgresql.PARAM: DEBUG # for parameters
+    root: DEBUG
